@@ -40,9 +40,8 @@ public final class PluginPathHelper {
                 if (fileName.contains("kafka-connector") && fileName.contains("camel")) {
                     String parentDir = file.getParentFile().getCanonicalPath();
                     if (parentDir.endsWith("target")) {
-                        LOG.debug("Adding file: {}", file.getCanonicalPath());
-
-                        results.add(file.getCanonicalPath());
+                        LOG.debug("Adding file: {}", file.getParentFile().getParentFile().getCanonicalPath());
+                        results.add(file.getParentFile().getParentFile().getCanonicalPath());
                     }
                 }
             }
